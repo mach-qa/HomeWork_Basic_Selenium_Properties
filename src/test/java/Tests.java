@@ -19,9 +19,6 @@ public class Tests extends TestSetup {
         getDriver().get(websiteAddress);
         logger.info("My Website Adress is " + websiteAddress);
         logger.debug("My Website Adress is " + websiteAddress);
-        logger.warn("My Website Adress is " + websiteAddress);
-        logger.error("My Website Adress is " + websiteAddress);
-        logger.trace("My Website Adress is " + websiteAddress);
 
         assertThat(getDriver().getTitle()).isEqualTo(expectedTitle);
     }

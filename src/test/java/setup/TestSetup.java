@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.TestInstance;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
@@ -18,10 +19,14 @@ public class TestSetup {
         return driver;
     }
 
+    static{
+        System.out.println("Static Block------");
+    }
+
     @BeforeAll
     static void setupDriver(){
         WebDriverManager.chromedriver().setup();
-        logger.info("Webdriver started succssfully");
+        logger.info("Webdriver started succesfully");
     }
 
     @BeforeEach
@@ -36,4 +41,6 @@ public class TestSetup {
         driver.quit();
         logger.info("Webdriver closed properly");
     }
+
+
 }

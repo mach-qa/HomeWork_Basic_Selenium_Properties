@@ -1,15 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <configuration scan="true">
     <property name="maxHistory" value="3"/>
     <property name="totalSizeCap" value="30KB"/>
     <timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss"/>
     <property name="DEV_HOME" value="${user.dir}/log"/>
     <property name="fileName" value="timeBasedLogFile_"/>
+    <logger name="org.apache" level="ERROR" />
+    <logger name="httpclient" level="ERROR" />
 
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <!-- encoders are assigned the type
              ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
         <encoder>
-            <pattern>"%25(%boldGreen(%class{0})) %green(%d{yyyy-MM-dd HH:mm:ss}) %highlight(%-5level - %msg%n)"</pattern>
+            <pattern>"%boldGreen(%class{0}) %green(%d{yyyy-MM-dd HH:mm:ss}) %highlight(%-5level- %msg)"%n</pattern>
         </encoder>
     </appender>
 
@@ -31,7 +34,7 @@
     </appender>
 
     <root level="info">
-        <appender-ref ref="STDOUT" />
+        <appender-ref ref="CONSOLE" />
         <appender-ref ref="FILE" />
     </root>
 </configuration>
