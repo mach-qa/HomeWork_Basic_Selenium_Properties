@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class example {
+public class Example {
     WebDriver driver;
 
     @BeforeAll
