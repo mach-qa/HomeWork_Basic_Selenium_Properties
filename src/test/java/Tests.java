@@ -20,15 +20,15 @@ public class Tests extends TestSetup {
         assertThat(getDriver().getTitle()).isEqualTo("Onet – Jesteś na bieżąco");
     }
 
-//    @ParameterizedTest (name = "{2} has been verified")
-//    @CsvFileSource(resources = "/page_database.csv")
-//    @Tag("Regression")
-//    @DisplayName("Website Titles Verification on ")
-//    void websiteTitleTest(String websiteAddress, String expectedTitle, String websiteTitle) {
-//        getDriver().get(websiteAddress);
-//        logger.info("My Website Adress is " + websiteAddress);
-//        logger.debug("My Website Adress is " + websiteAddress);
-//
-//        assertThat(getDriver().getTitle()).isEqualTo(expectedTitle);
-//    }
+   @ParameterizedTest (name = "{2} has been verified")
+   @CsvFileSource(resources = "/page_database.csv")
+   @Tag("Regression")
+   @DisplayName("Website Titles Verification on ")
+   void websiteTitleTest(String websiteAddress, String expectedTitle, String websiteTitle) {
+       getDriver().get(websiteAddress);
+       logger.info("My Website Adress is " + websiteAddress);
+       logger.debug("My Website Adress is " + websiteAddress);
+
+       assertThat(getDriver().getTitle()).isEqualTo(expectedTitle);
+   }
 }
